@@ -3,6 +3,7 @@
 # LCOMMIT builds last commit
 
 #read command line args
+git pull origin
 
 while getopts b:w:l: option
 do
@@ -48,7 +49,7 @@ EOF
         echo Creating new package.xml
         echo $NEWPKGXML > $WSPACE/src/package.xml
 		
-        for CFILE in `git diff-tree --no-commit-id --name-only -r head`
+        for CFILE in `git diff  --name-only @{1}..`
 		
 		#git diff-tree --no-commit-id --name-only -r head
 		#echo cfile "$CFILE"
@@ -122,6 +123,8 @@ EOF
 
         echo ====FINAL PACKAGE.XML=====
         #type "$WSPACE\src\package.xml"
+		########### git checking back to master
+		git checkout master
 else
         echo No RSA found, default Package.xml will be used
         echo Creating new list commit file
