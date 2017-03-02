@@ -3,7 +3,7 @@
 # LCOMMIT builds last commit
 
 #read command line args
-git pull origin
+git pull origin master
 
 while getopts b:w:l: option
 do
