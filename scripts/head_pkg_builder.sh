@@ -1,7 +1,6 @@
 # BNAME build name
 # WSPACE build workspace dir
 # LCOMMIT builds last commit
-
 #read command line args
 git pull origin master
 
