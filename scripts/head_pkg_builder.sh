@@ -56,6 +56,7 @@ EOF
         do
                 echo Analyzing file basename $CFILE
 
+
                 case "$CFILE"
                 in
 						*-meta*) TYPENAME="UNKNOWN TYPE";;
