@@ -47,8 +47,8 @@ EOF
         echo $NEWPKGXML
         echo Creating new package.xml
         echo $NEWPKGXML > $WSPACE/src/package.xml
-		
-        for CFILE in `git diff  --name-only @{1}..`
+		git diff --diff-filter=ACMR --name-only @{1}..
+        for CFILE in `git diff --diff-filter=ACMR --name-only @{1}..`
 		
 		#git diff-tree --no-commit-id --name-only -r head
 		#echo cfile "$CFILE"
